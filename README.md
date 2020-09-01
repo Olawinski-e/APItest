@@ -19,7 +19,6 @@ En t'inspirant de la structure actuelle du projet, crée une nouvelle route "/po
 
 Le formulaire doit être posté à l'API avec le "userId" numéro "3".  Après l'envoi du formulaire, un loader doit apparaître. Et enfin, afficher un message de félicitation avec le numéro de l'article ("id").
 
-
 ### Rendre l'application "lazy loading"
 
 Découpe l'application 3 modules :
@@ -30,25 +29,6 @@ Découpe l'application 3 modules :
 
 Les 2 nouveaux modules doivent profiter du "lazy loading" d'Angular.
 
-
-
-
-
-
-
-
-
 ### Mise en place d'un test 2e2
 
 Met en place un test 2e2 (end to end) sur la page "/tools/show-ip", qui permet de tester l'affichage de l'adresse IP (utilise une simple Regex).
-
-
-
-
-\b(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.
-(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.
-(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.
-(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\b
-
-
-^(\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))\.(\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))\.(\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))\.(\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))$
