@@ -1,0 +1,127 @@
+<div class="main">
+	<h4 class="main__h4">Posts :</h4>
+	<div [hidden]="submitted" class="main__div">
+		<h5 class="main__h5">Nouveau post :</h5>
+		<form (ngSubmit)="onSubmit()" [formGroup]="postCreateForm">
+			<p class="main__div__p">
+				<mat-form-field appearance="outline">
+					<mat-label>Titre</mat-label>
+					<input
+						matInput
+						formControlName="title"
+						minlength="3"
+						maxlength="60"
+						required
+						aria-label="Titre"
+					/>
+					<mat-error *ngIf="checkError('title', 'required')"
+						>Un titre est requis</mat-error
+					>
+					<mat-error *ngIf="checkError('title', 'minlength')"
+						>Le titre doit faire plus de 3 caractères</mat-error
+					>
+					<mat-error *ngIf="checkError('title', 'maxlength')"
+						>Le titre doit faire moins de 60 caractères</mat-error
+					>
+				</mat-form-field>
+			</p>
+
+			<p class="main__div__p">
+				<mat-form-field class="main__div__field" appearance="outline">
+					<mat-label>Contenu</mat-label>
+					<textarea
+						matInput
+						formControlName="body"
+						minlength="30"
+						maxlength="600"
+						required
+						aria-label="Contenu"
+					></textarea>
+					<mat-error *ngIf="checkError('body', 'required')"
+						>Un contenu est requis</mat-error
+					>
+					<mat-error *ngIf="checkError('body', 'minlength')"
+						>Le contenu doit faire plus de 30 caractères</mat-error
+					>
+					<mat-error *ngIf="checkError('body', 'maxlength')"
+						>Le contenu doit faire moins de 600
+						caractères</mat-error
+					>
+				</mat-form-field>
+			</p>
+
+			<p class="main__div__p">
+				<button
+					mat-stroked-button
+					color="secondary"
+					type="reset"
+					(click)="onReset()"
+					aria-label="Reset"
+				>
+					Tout effacer
+				</button>
+				<button
+					mat-flat-button
+					color="primary"
+					type="submit"
+					[disabled]="!postCreateForm.valid"
+					aria-label="Valider"
+				>
+					Valider
+				</button>
+			</p>
+		</form>
+	</div>
+
+	<div [hidden]="!submitted" class="main__div">
+		<span *ngIf="loader === true">Chargement...</span>
+		<div *ngIf="loader === false">
+			<h2 class="main__alignCenter">Félicitations !</h2>
+			<p class="main__alignCenter">
+				Numéro de l'article : {{ id | json }}
+			</p>
+			<a class="main__alignCenter__link" href="/post/new">
+				<mat-icon
+					mat-icon-button
+					color="accent"
+					aria-label="Ajouter un nouveau post"
+					>add</mat-icon
+				>
+
+				Ajouter un nouveau post</a
+			>
+		</div>
+	</div>
+
+	<div class="main">
+		<h5 class="main__h5">Ancien posts :</h5>
+
+		<div class="main__divPosts">
+			<mat-card
+				class="main__divPosts__card"
+				*ngFor="let post of posts | slice: 0:10; let i = index"
+			>
+				<mat-card-header>
+					<mat-card-title>{{ post.title }}</mat-card-title>
+				</mat-card-header>
+				<mat-card-content>
+					<p>
+						{{ post.body }}
+					</p>
+				</mat-card-content>
+				<mat-card-actions class="main__div__p">
+					<button mat-icon-button color="warn" aria-label="Aimer">
+						<mat-icon>favorite</mat-icon>
+					</button>
+					<button
+						mat-icon-button
+						color="accent"
+						aria-label="Partager"
+					>
+						<mat-icon>share</mat-icon>
+					</button>
+				</mat-card-actions>
+			</mat-card>
+		</div>
+	</div>
+</div>

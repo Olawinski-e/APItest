@@ -1,0 +1,10 @@
+<div class="main">
+	<h4 class="main__h4">Date & heure à Tokyo :</h4>
+	<div class="main__div">
+		<span *ngIf="loader === true">Chargement...</span>
+		<p *ngIf="time" class="main__div__p">
+			"Il est {{ time | date: "HH'h'mm":"GMT+9" }} et nous sommes le
+			{{ time | date: "longDate":"GMT+9" }}".
+		</p>
+	</div>
+</div>
