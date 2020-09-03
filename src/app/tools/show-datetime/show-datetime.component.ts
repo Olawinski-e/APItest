@@ -30,9 +30,6 @@ export class ShowDatetimeComponent implements OnInit {
 			.subscribe((data) => {
 				this.loader = false;
 				this.timestamp = data.milliseconds_since_epoch;
-				console.log(this.timestamp);
-
-				console.log(this.currentDate);
 			});
 	}
 }
