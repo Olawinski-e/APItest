@@ -3,8 +3,7 @@ export interface GetIp {
 }
 
 export interface GetDate {
-	date: string;
-	time: string;
+	milliseconds_since_epoch: number;
 }
 
 export class Post {

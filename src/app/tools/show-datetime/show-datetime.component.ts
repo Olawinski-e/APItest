@@ -13,8 +13,8 @@ registerLocaleData(localeFr, 'fr');
 })
 export class ShowDatetimeComponent implements OnInit {
 	public loader = false;
-	public date: string = null;
-	public time: Date;
+	public timestamp: number;
+	public currentDate = new Date(this.timestamp).toLocaleDateString('en-us');
 
 	constructor(private _jsontest: JsontestdateTimeService) {}
 
@@ -29,8 +29,10 @@ export class ShowDatetimeComponent implements OnInit {
 			.pipe(delay(500))
 			.subscribe((data) => {
 				this.loader = false;
-				this.date = data.date;
-				this.time = new Date(data.date + ' ' + data.time + ' GMT+0000');
+				this.timestamp = data.milliseconds_since_epoch;
+				console.log(this.timestamp);
+
+				console.log(this.currentDate);
 			});
 	}
 }
