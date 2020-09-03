@@ -1,8 +1,8 @@
 import { delay } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 
-import { JsontestService } from 'src/app/services/jsontest/jsontest.service';
-import { Post } from 'src/app/services/jsontest/jsontest.type';
+import { JsontestpostsService } from 'src/app/services/jsontest-post/jsontestposts.service';
+import { Post } from 'src/app/services/jsontest.type';
 
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 
@@ -19,7 +19,7 @@ export class ShowPostsComponent implements OnInit {
 	public submitted: boolean;
 	public id: number;
 
-	constructor(private _jsontest: JsontestService) {}
+	constructor(private _jsontest: JsontestpostsService) {}
 
 	public ngOnInit() {
 		this.getPosts();
@@ -43,12 +43,9 @@ export class ShowPostsComponent implements OnInit {
 	};
 
 	public getPosts() {
-		this._jsontest
-			.getPosts()
-			.pipe(delay(500))
-			.subscribe((data) => {
-				this.posts = data;
-			});
+		this._jsontest.getPosts().subscribe((data) => {
+			this.posts = data;
+		});
 	}
 
 	public onSubmit() {
