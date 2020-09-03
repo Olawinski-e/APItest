@@ -1,7 +1,7 @@
 import { delay } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 
-import { JsontestService } from 'src/app/services/jsontest/jsontest.service';
+import { JsontestdateTimeService } from 'src/app/services/jsontest-dateTime/jsontestdate-time.service';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
@@ -16,7 +16,7 @@ export class ShowDatetimeComponent implements OnInit {
 	public date: string = null;
 	public time: Date;
 
-	constructor(private _jsontest: JsontestService) {}
+	constructor(private _jsontest: JsontestdateTimeService) {}
 
 	public ngOnInit() {
 		this.getDate();

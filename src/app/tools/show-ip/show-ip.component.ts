@@ -1,7 +1,7 @@
 import { delay } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 
-import { JsontestService } from '../../services/jsontest/jsontest.service';
+import { JsontestService } from '../../services/jsontest-ip/jsontest.service';
 
 @Component({
 	selector: 'app-show-ip',

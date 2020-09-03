@@ -9,8 +9,16 @@ export const ENVIRONMENT = {
 		jsontest: {
 			apiUrls: {
 				ip: 'http://ip.jsontest.com',
+			},
+		},
+		jsontestdatetime: {
+			apiUrls: {
 				date: 'http://date.jsontest.com',
-				time: 'http://date.jsontest.com',
+				posts: 'https://jsonplaceholder.typicode.com/posts',
+			},
+		},
+		jsontestposts: {
+			apiUrls: {
 				posts: 'https://jsonplaceholder.typicode.com/posts',
 			},
 		},
