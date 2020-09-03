@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ShowPostsComponent } from './show-posts/show-posts.component';
+import { NewPostComponent } from './new-post/new-post.component';
+
 import { ShowPostsRoutingModule } from './posts-routing.module';
 
 import {
@@ -27,7 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
 		MatIconModule,
 		MatButtonModule,
 	],
-	declarations: [ShowPostsComponent],
+	declarations: [ShowPostsComponent, NewPostComponent],
 	providers: [
 		{
 			provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,

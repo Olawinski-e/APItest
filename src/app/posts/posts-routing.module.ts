@@ -5,7 +5,7 @@ import { ShowPostsComponent } from './show-posts/show-posts.component';
 
 const routes: Routes = [
 	{
-		path: '',
+		path: 'new',
 		component: ShowPostsComponent,
 	},
 ];

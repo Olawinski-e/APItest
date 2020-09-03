@@ -14,7 +14,7 @@ const routes: Routes = [
 			import('./tools/tools.module').then((m) => m.ToolsModule),
 	},
 	{
-		path: 'post/new',
+		path: 'post',
 		loadChildren: () =>
 			import('./posts/posts.module').then((m) => m.ShowPostsModule),
 	},

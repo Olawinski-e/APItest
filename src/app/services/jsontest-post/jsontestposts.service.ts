@@ -13,13 +13,13 @@ export class JsontestpostsService {
 
 	public getPosts() {
 		return this._http.get<Post[]>(
-			ENVIRONMENT.services.jsontestposts.apiUrls.posts + '/'
+			ENVIRONMENT.services.jsontestposts.apiUrl + '/'
 		);
 	}
 
 	public postPost(post: Post) {
 		return this._http.post<Post>(
-			ENVIRONMENT.services.jsontestposts.apiUrls.posts + '/',
+			ENVIRONMENT.services.jsontestposts.apiUrl + '/',
 			post
 		);
 	}

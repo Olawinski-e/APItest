@@ -13,7 +13,7 @@ export class JsontestdateTimeService {
 
 	public getDate() {
 		return this._http.get<GetDate>(
-			ENVIRONMENT.services.jsontestdatetime.apiUrls.date + '/'
+			ENVIRONMENT.services.jsontestdatetime.apiUrl + '/'
 		);
 	}
 }
