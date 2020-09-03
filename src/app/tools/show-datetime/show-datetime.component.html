@@ -3,7 +3,7 @@
 	<div class="main__div">
 		<span *ngIf="loader === true">Chargement...</span>
 		<p *ngIf="timestamp" class="main__div__p">
-			"Il est {{ timestamp | date: "HH'h'mm":"GMT+9" }}et nous sommes le
+			"Il est {{ timestamp | date: "HH'h'mm":"GMT+9" }} et nous sommes le
 			{{ timestamp | date: "longDate":"GMT+9" }}".
 		</p>
 	</div>
