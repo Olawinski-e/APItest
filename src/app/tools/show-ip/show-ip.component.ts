@@ -16,6 +16,7 @@ export class ShowIpComponent implements OnInit {
 
 	public ngOnInit() {
 		this.getIp();
+		// this.alertIp();
 	}
 
 	public getIp() {
@@ -31,4 +32,10 @@ export class ShowIpComponent implements OnInit {
 				});
 		});
 	}
+
+	// public alertIp() {
+	// 	return this._jsontest.alertIp().subscribe((data) => {
+	// 		alert(data);
+	// 	});
+	// }
 }

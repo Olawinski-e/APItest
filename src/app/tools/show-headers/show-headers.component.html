@@ -1,0 +1,24 @@
+<div class="main">
+	<h4 class="main__h4">Headers :</h4>
+	<div class="main__div">
+		<span *ngIf="loader === true">Chargement...</span>
+		<p *ngIf="AcceptLanguage" class="main__div__p">
+			<strong> Accept Language: </strong> {{ AcceptLanguage }}
+		</p>
+		<p *ngIf="Host" class="main__div__p">
+			<strong> Host: </strong> {{ Host }};
+		</p>
+
+		<p *ngIf="AcceptCharset" class="main__div__p">
+			<strong> Accept Charset: </strong> {{ AcceptCharset }};
+		</p>
+
+		<p *ngIf="Accept" class="main__div__p">
+			<strong> Accept: </strong> {{ Accept }};
+		</p>
+
+		<p *ngIf="UserAgent" class="main__div__p">
+			<strong> User Agent: </strong> {{ UserAgent }};
+		</p>
+	</div>
+</div>

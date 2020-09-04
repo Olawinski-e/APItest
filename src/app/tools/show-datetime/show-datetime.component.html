@@ -1,10 +1,39 @@
 <div class="main">
-	<h4 class="main__h4">Date & heure à Tokyo :</h4>
+	<div class="main__icon">
+		<h4 class="main__h4">
+			Time in S.Korea
+			<img
+				src="https://www.pngrepo.com/png/99296/180/south-korea.png"
+				alt="south korea flag"
+			/>
+			:
+		</h4>
+	</div>
+
 	<div class="main__div">
 		<span *ngIf="loader === true">Chargement...</span>
 		<p *ngIf="timestamp" class="main__div__p">
-			"Il est {{ timestamp | date: "HH'h'mm":"GMT+9" }} et nous sommes le
-			{{ timestamp | date: "longDate":"GMT+9" }}".
+			" Il est {{ timestamp | date: "HH'h'mm":"GMT+9" }} et nous sommes le
+			{{ timestamp | date: "longDate":"GMT+9" }} "
 		</p>
+	</div>
+
+	<div id="clockdiv">
+		<div>
+			<span class="days"></span>
+			<div class="smalltext">Days</div>
+		</div>
+		<div>
+			<span class="hours"></span>
+			<div class="smalltext">Hours</div>
+		</div>
+		<div>
+			<span class="minutes"></span>
+			<div class="smalltext">Minutes</div>
+		</div>
+		<div>
+			<span class="seconds"></span>
+			<div class="smalltext">Seconds</div>
+		</div>
 	</div>
 </div>
