@@ -13,7 +13,13 @@ export class JsontestService {
 
 	public getIp() {
 		return this._http.get<GetIp>(
-			ENVIRONMENT.services.jsontestip.apiUrl + '/'
+			ENVIRONMENT.services.jsontestip.apiUrls.ip + '/'
+		);
+	}
+
+	public alertIp() {
+		return this._http.get<GetIp>(
+			ENVIRONMENT.services.jsontestip.apiUrls.alert + '/'
 		);
 	}
 }

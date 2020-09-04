@@ -7,7 +7,10 @@ export const ENVIRONMENT = {
 
 	services: {
 		jsontestip: {
-			apiUrl: 'http://ip.jsontest.com',
+			apiUrls: {
+				ip: 'http://ip.jsontest.com',
+				alert: 'http://code.jsontest.com/',
+			},
 		},
 		jsontestdatetime: {
 			apiUrl: 'http://date.jsontest.com',
