@@ -2,9 +2,6 @@ import { delay } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 
 import { JsontestdateTimeService } from 'src/app/services/jsontest-dateTime/jsontestdate-time.service';
-import { registerLocaleData } from '@angular/common';
-import localeFr from '@angular/common/locales/fr';
-registerLocaleData(localeFr, 'fr');
 
 @Component({
 	selector: 'app-show-datetime',
@@ -14,7 +11,8 @@ registerLocaleData(localeFr, 'fr');
 export class ShowDatetimeComponent implements OnInit {
 	public loader = false;
 	public timestamp: number;
-	public currentDate = new Date(this.timestamp).toLocaleDateString('en-us');
+	public currentDate = new Date(this.timestamp);
+	public deadline = this.currentDate;
 
 	constructor(private _jsontest: JsontestdateTimeService) {}
 
@@ -32,4 +30,6 @@ export class ShowDatetimeComponent implements OnInit {
 				this.timestamp = data.milliseconds_since_epoch;
 			});
 	}
+
+	// ===============================================================
 }

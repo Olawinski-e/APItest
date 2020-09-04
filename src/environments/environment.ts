@@ -12,6 +12,9 @@ export const ENVIRONMENT = {
 				alert: 'http://code.jsontest.com/',
 			},
 		},
+		jsontestheaders: {
+			apiUrl: 'http://headers.jsontest.com/',
+		},
 		jsontestdatetime: {
 			apiUrl: 'http://date.jsontest.com',
 		},

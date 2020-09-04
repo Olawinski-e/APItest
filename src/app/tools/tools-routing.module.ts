@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ShowIpComponent } from './../tools/show-ip/show-ip.component';
 import { ShowDatetimeComponent } from './../tools/show-datetime/show-datetime.component';
+import { ShowHeadersComponent } from './show-headers/show-headers.component';
 
 const routes: Routes = [
 	{
@@ -12,6 +13,10 @@ const routes: Routes = [
 	{
 		path: 'show-ip',
 		component: ShowIpComponent,
+	},
+	{
+		path: 'show-headers',
+		component: ShowHeadersComponent,
 	},
 ];
 
