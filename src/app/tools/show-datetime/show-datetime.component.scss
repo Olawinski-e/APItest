@@ -8,30 +8,36 @@
 	}
 }
 
-#clockdiv {
-	font-family: sans-serif;
-	color: #fff;
-	display: inline-block;
-	font-weight: 100;
-	text-align: center;
-	font-size: 30px;
+.digitalClock {
+	display: flex;
+	flex-direction: column;
 }
 
-#clockdiv > div {
-	padding: 10px;
-	border-radius: 3px;
-	background: #00bf96;
-	display: inline-block;
-}
+// $direction: (
+//   t: top,
+//   r: right,
+//   b: bottom,
+//   l: left
+// );
 
-#clockdiv div > span {
-	padding: 15px;
-	border-radius: 3px;
-	background: #00816a;
-	display: inline-block;
-}
+// @each $direction, $direction-value in $direction {
+//   .m#{$direction}-#{0} {
+//       margin-#{$direction-value}: 0;
+//   }
+// }
 
-.smalltext {
-	padding-top: 5px;
-	font-size: 16px;
-}
+// @mixin border($color: $border, $width: 1px) {
+// 	border: $width solid $color;
+// }
+// .separator-red {
+//   @include border(red)
+// ;
+// }
+
+// .separator-yellow {
+//   @include border(yellow);
+// }
+
+// non mais l'icone angry bird quoi
+
+//  @include border( red ) sans espace

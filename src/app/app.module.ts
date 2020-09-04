@@ -28,7 +28,7 @@ import { HomeComponent } from './home/home.component';
 		MatToolbarModule,
 		MatMenuModule,
 	],
-	providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
+	providers: [{ provide: LOCALE_ID, useValue: 'en-EN' }],
 	bootstrap: [AppComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
