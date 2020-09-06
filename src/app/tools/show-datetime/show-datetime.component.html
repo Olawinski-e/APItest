@@ -19,6 +19,7 @@
 	</div> -->
 
 	<div class="main__div">
+		<span *ngIf="loader === true">Chargement...</span>
 		<p *ngIf="korea" class="main__div__p">
 			" Il est<span> {{ fDate }}</span> <span> {{ france }} </span>"
 		</p>
@@ -38,6 +39,7 @@
 	</div>
 
 	<div class="main__div">
+		<span *ngIf="loader === true">Chargement...</span>
 		<p *ngIf="korea" class="main__div__p">
 			" It's<span> {{ kDate }}</span> <span> {{ korea }} </span>"
 		</p>
