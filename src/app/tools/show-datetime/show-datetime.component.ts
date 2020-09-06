@@ -11,68 +11,45 @@ import { JsontestdateTimeService } from 'src/app/services/jsontest-dateTime/json
 })
 export class ShowDatetimeComponent implements OnInit {
 	public loader = false;
-
-	//  DATE ===============================================================
 	public timestamp: number;
-	public currentDate = new Date(this.timestamp);
+	public france: string;
+	public korea: string;
 
-	constructor(private _jsontest: JsontestdateTimeService) {}
+	constructor() {}
 
 	public ngOnInit() {
-		this.getDate();
-
 		setInterval(() => {
-			const date = new Date();
-			this.updateDate(date);
+			const dateI = new Date();
+			this.updateFDate(dateI);
+			this.updateKDate(dateI);
 		}, 1000);
 	}
 
-	public getDate() {
-		this.loader = true;
-		this._jsontest
-			.getDate()
-			.pipe(delay(500))
-			.subscribe((data) => {
-				this.loader = false;
-				this.timestamp = data.milliseconds_since_epoch;
-			});
+	// FRANCE ===============================================================
+
+	public fDate: string;
+
+	private updateFDate(date: Date) {
+		this.france = moment(this.timestamp)
+			.locale('fr')
+			.tz('Europe/Paris')
+			.format('[et nous sommes le] D MMMM YYYY');
+		this.fDate = date.toLocaleTimeString('fr-FR', {
+			timeZone: 'Europe/Paris',
+			hour12: false,
+		});
 	}
 
-	// CLOCK ===============================================================
+	// KOREA ===============================================================
 
-	private date = new Date();
-	public hour: any;
-	public minute: string;
-	public second: string;
-	public ampm: string;
+	public kDate: string;
 
-	private updateDate(date: Date) {
-		const hours = this.date.getHours();
-		console.log('now' + this.tzone);
-
-		this.ampm = hours >= 12 ? 'PM' : 'AM'; // get the hours from the date
-		this.hour = hours % 12; // makes the hour in 12 hours format
-		this.hour = this.hour ? this.hour : 12; // if the hour is 0 then 12 is assigned
-		this.hour = this.hour < 10 ? '0' + this.hour : this.hour; // if the hour is single digit, then adds 0 in front of
-
-		const minutes = date.getMinutes();
-		this.minute = minutes < 10 ? '0' + minutes : minutes.toString();
-
-		const seconds = date.getSeconds();
-		this.second = seconds < 10 ? '0' + seconds : seconds.toString();
+	private updateKDate(date: Date) {
+		this.korea = moment(this.timestamp)
+			.tz('Asia/Seoul')
+			.format('[and today is] MMMM Do YYYY');
+		this.kDate = date.toLocaleTimeString('en-US', {
+			timeZone: 'Asia/Seoul',
+		});
 	}
-
-	// MOMENT ===============================================================
-
-	public now = moment().format();
-	public seoul = moment().utcOffset('-08:00');
-	public tzone = this.seoul.tz('Asia/Seoul').format('ha z');
-
-	// 	public jun = moment("2014-06-01T12:00:00Z");
-	// 	public dec = moment("2014-12-01T12:00:00Z");
-	// 	public newYork = moment.tz("2014-06-01 12:00", "America/New_York");
-	// 	newYork.format();    // 2014-06-01T12:00:00-04:00
-
-	// jun.tz('Asia/Tokyo').format('ha z');           // 9pm JST
-	// dec.tz('Asia/Tokyo').format('ha z');           // 9pm JST
 }

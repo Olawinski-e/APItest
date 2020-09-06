@@ -10,11 +10,17 @@
 		</h4>
 	</div>
 
-	<div class="main__div">
+	<!-- <div class="main__div">
 		<span *ngIf="loader === true">Chargement...</span>
 		<p *ngIf="timestamp" class="main__div__p">
-			" Il est {{ timestamp | date: "HH'h'mm" }} et aujourd'hui nous
-			sommes le {{ timestamp | date: "longDate":"GMT+2":"fr" }} "
+			" Il est {{ timestamp | date: "HH'h'mm" }} et nous sommes le
+			{{ timestamp | date: "longDate":"GMT+2":"fr" }} "
+		</p>
+	</div> -->
+
+	<div class="main__div">
+		<p *ngIf="korea" class="main__div__p">
+			" Il est<span> {{ fDate }}</span> <span> {{ france }} </span>"
 		</p>
 	</div>
 </div>
@@ -24,7 +30,7 @@
 		<h4 class="main__h4">
 			Time in S.Korea
 			<img
-				src="https://www.pngrepo.com/png/99296/180/south-korea.png"
+				src="https://cdn.countryflags.com/thumbs/south-korea/flag-round-250.png"
 				alt="south korea flag"
 			/>
 			:
@@ -32,25 +38,8 @@
 	</div>
 
 	<div class="main__div">
-		<span *ngIf="loader === true">Chargement...</span>
-		<!-- <p *ngIf="timestamp" class="main__div__p">
-			" It's {{ timestamp | date: "HH'h'mm":"GMT+9" }} and today is
-			{{ timestamp | date: "longDate":"GMT+9" }} "
-		</p> -->
-		<p *ngIf="timestamp" class="main__div__p">
-			" It's <span>{{ hour }}</span
-			>:<span>{{ minute }}</span
-			>:<span>{{ second }}</span> <span> {{ ampm }}</span> and today is
-			{{ timestamp | date: "longDate":"GMT+9" }} "
+		<p *ngIf="korea" class="main__div__p">
+			" It's<span> {{ kDate }}</span> <span> {{ korea }} </span>"
 		</p>
-	</div>
-
-	<div class="digitalClock">
-		<div class="digitalTime">
-			<div>{{ hour | date: "hh":"GMT+9" }}</div>
-			<div>{{ minute }}</div>
-			<div>{{ second }}</div>
-			<div>{{ ampm }}</div>
-		</div>
 	</div>
 </div>

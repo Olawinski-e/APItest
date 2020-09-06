@@ -60,7 +60,8 @@ mat-toolbar span {
 	&__h3,
 	&__h4,
 	&__h5 {
-		text-align: center;
+		display: flex;
+		align-items: baseline;
 	}
 	&__div {
 		margin: 0px auto;
