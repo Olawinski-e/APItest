@@ -28,7 +28,6 @@ export class ShowDatetimeComponent implements OnInit {
 	public fDate: string;
 
 	private updateFDate(date: Date) {
-		this.loader = true;
 		this.france = moment(this.timestamp)
 			.locale('fr')
 			.tz('Europe/Paris')
@@ -44,7 +43,6 @@ export class ShowDatetimeComponent implements OnInit {
 	public kDate: string;
 
 	private updateKDate(date: Date) {
-		this.loader = true;
 		this.korea = moment(this.timestamp)
 			.tz('Asia/Seoul')
 			.format('[and today is] MMMM Do YYYY');
