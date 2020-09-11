@@ -9,7 +9,6 @@ import * as moment from 'moment-timezone';
 })
 export class ShowDatetimeComponent implements OnInit {
 	public loader = false;
-	public timestamp: number;
 	public france: string;
 	public korea: string;
 
@@ -28,7 +27,7 @@ export class ShowDatetimeComponent implements OnInit {
 	public fDate: string;
 
 	private updateFDate(date: Date) {
-		this.france = moment(this.timestamp)
+		this.france = moment()
 			.locale('fr')
 			.tz('Europe/Paris')
 			.format('[et nous sommes le] D MMMM YYYY');
@@ -43,7 +42,7 @@ export class ShowDatetimeComponent implements OnInit {
 	public kDate: string;
 
 	private updateKDate(date: Date) {
-		this.korea = moment(this.timestamp)
+		this.korea = moment()
 			.tz('Asia/Seoul')
 			.format('[and today is] MMMM Do YYYY');
 		this.kDate = date.toLocaleTimeString('en-US', {
