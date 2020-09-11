@@ -2,10 +2,6 @@ export interface GetIp {
 	ip: string;
 }
 
-export interface AlertIp {
-	alert: string;
-}
-
 export interface GetHeader {
 	['Accept-Language']: string;
 	['Host']: string;

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { ENVIRONMENT } from '../../../environments/environment';
 
-import { GetIp, AlertIp } from '../jsontest.type';
+import { GetIp } from '../jsontest.type';
 
 @Injectable({
 	providedIn: 'root',
@@ -16,10 +16,4 @@ export class JsontestService {
 			ENVIRONMENT.services.jsontestip.apiUrls.ip + '/'
 		);
 	}
-
-	// public alertIp() {
-	// 	return this._http.get<AlertIp>(
-	// 		ENVIRONMENT.services.jsontestip.apiUrls.alert + '/'
-	// 	);
-	// }
 }
