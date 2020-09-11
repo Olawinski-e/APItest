@@ -1,0 +1,19 @@
+<h2>My notes</h2>
+<div *ngFor="let note of notes">
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">{{ note.title }}</h5>
+			<p class="card-text">{{ note.content }}</p>
+
+			<button
+				mat-flat-button
+				color="warn"
+				type="submit"
+				aria-label="Valider"
+				(click)="deleteNote(note.id)"
+			>
+				delete
+			</button>
+		</div>
+	</div>
+</div>

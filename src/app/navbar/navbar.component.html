@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+	<button mat-icon-button [matMenuTriggerFor]="menu">
+		<mat-icon>menu</mat-icon>
+	</button>
+
+	<mat-menu #menu="matMenu">
+		<button mat-menu-item [matMenuTriggerFor]="tools">Tools</button>
+		<button mat-menu-item [matMenuTriggerFor]="notes">Notes</button>
+
+		<button mat-menu-item routerLink="/post/new">Posts</button>
+	</mat-menu>
+
+	<mat-menu #tools>
+		<button mat-menu-item routerLink="/tools/show-ip">Mon IP</button>
+		<button mat-menu-item routerLink="/tools/show-headers">Headers</button>
+		<button mat-menu-item routerLink="/tools/show-datetime">
+			Date & heure
+		</button>
+	</mat-menu>
+
+	<mat-menu #notes>
+		<button mat-menu-item routerLink="/notes/view">View</button>
+	</mat-menu>
+
+	<span routerLink="/" class="logoBA">BasicApp</span>
+</mat-toolbar>
