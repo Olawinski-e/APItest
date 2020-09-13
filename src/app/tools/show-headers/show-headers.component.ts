@@ -33,7 +33,6 @@ export class ShowHeadersComponent implements OnInit {
 				this.AcceptCharset = data['Accept-Charset'];
 				this.Accept = data.Accept;
 				this.UserAgent = data['User-Agent'];
-				console.log(data);
 			});
 	}
 }

@@ -19,6 +19,11 @@ const routes: Routes = [
 			import('./posts/posts.module').then((m) => m.ShowPostsModule),
 	},
 	{
+		path: 'notes',
+		loadChildren: () =>
+			import('./notes/notes.module').then((m) => m.NotesModule),
+	},
+	{
 		path: '',
 		redirectTo: 'HomeComponent',
 		pathMatch: 'full',

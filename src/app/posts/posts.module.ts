@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
+	declarations: [ShowPostsComponent, NewPostComponent],
 	imports: [
 		CommonModule,
 		ShowPostsRoutingModule,
@@ -29,7 +30,6 @@ import { MatButtonModule } from '@angular/material/button';
 		MatIconModule,
 		MatButtonModule,
 	],
-	declarations: [ShowPostsComponent, NewPostComponent],
 	providers: [
 		{
 			provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
