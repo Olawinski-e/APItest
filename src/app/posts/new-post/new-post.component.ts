@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
-import { JsontestpostsService } from 'src/app/services/jsontest-post/jsontestposts.service';
 import { delay } from 'rxjs/operators';
 
+import { JsontestpostsService } from 'src/app/services/jsontest-post/jsontestposts.service';
 @Component({
 	selector: 'app-new-post',
 	templateUrl: './new-post.component.html',

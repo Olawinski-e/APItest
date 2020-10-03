@@ -2,29 +2,32 @@ import { browser, logging } from 'protractor';
 
 import { App } from './app.po';
 import { HomePage } from './home/home.po';
+import { Navbar } from './navbar/navbar.po';
 import { ShowIpPage } from './show-ip/show-ip.po';
 
 describe('workspace-project App', () => {
 	let app: App;
+	let navbar: Navbar;
 	let homePage: HomePage;
-	let showIP: ShowIpPage;
+	let showIpPage: ShowIpPage;
 
 	beforeEach(() => {
 		app = new App();
+		navbar = new Navbar();
 		homePage = new HomePage();
-		showIP = new ShowIpPage();
+		showIpPage = new ShowIpPage();
 	});
 
 	it('should display title in "home" page', () => {
 		app.open();
-		app.menuTo(1);
+		navbar.menuTo(1);
 		expect(homePage.getTitle()).toEqual('Bienvenue sur BasicApp');
 	});
 
-	it('should match IP with regex', async () => {
-		await showIP.getIp();
-
-		expect(showIP.ip).toMatch(showIP.regex);
+	it('should match ip with regex in "show-ip" page', () => {
+		app.open();
+		navbar.menuDoubleTo(1);
+		expect(showIpPage.getIp()).toMatch(showIpPage.regex);
 	});
 
 	afterEach(async () => {
