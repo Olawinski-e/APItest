@@ -1,26 +1,6 @@
 <div class="main">
 	<div class="main__icon">
 		<h4 class="main__h4">
-			Time in France
-			<img
-				src="https://cdn.countryflags.com/thumbs/france/flag-round-250.png"
-				alt="french flag"
-			/>
-			:
-		</h4>
-	</div>
-
-	<div class="main__div">
-		<span *ngIf="loader === true">Chargement...</span>
-		<p *ngIf="korea" class="main__div__p">
-			" Il est<span> {{ fDate }}</span> <span> {{ france }} </span>"
-		</p>
-	</div>
-</div>
-
-<div class="main">
-	<div class="main__icon">
-		<h4 class="main__h4">
 			Time in S.Korea
 			<img
 				src="https://cdn.countryflags.com/thumbs/south-korea/flag-round-250.png"
@@ -29,11 +9,7 @@
 			:
 		</h4>
 	</div>
-
-	<div class="main__div">
-		<span *ngIf="loader === true">Chargement...</span>
-		<p *ngIf="korea" class="main__div__p">
-			" It's<span> {{ kDate }}</span> <span> {{ korea }} </span>"
-		</p>
+	<div *ngIf="seoul" class="main__div">
+		<p *ngIf="seoul" class="main__div__p">"{{ seoul }}"</p>
 	</div>
 </div>

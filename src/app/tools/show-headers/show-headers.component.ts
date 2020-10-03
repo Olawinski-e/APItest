@@ -1,6 +1,6 @@
 import { delay } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import { JsontestHeadersService } from 'src/app/services/jsontest-headers/jsontest-headers.service';
+import { JsontestService } from 'src/app/services/jsontest/jsontest.service';
 
 @Component({
 	selector: 'app-show-headers',
@@ -15,7 +15,7 @@ export class ShowHeadersComponent implements OnInit {
 	public Accept: string;
 	public UserAgent: string;
 
-	constructor(private _jsontest: JsontestHeadersService) {}
+	constructor(private _jsontest: JsontestService) {}
 
 	ngOnInit(): void {
 		this.getHeaders();

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { JsontestpostsService } from 'src/app/services/jsontest-post/jsontestposts.service';
-import { Post } from 'src/app/services/jsontest.type';
+import { JsonplaceholderService } from 'src/app/services/jsonplaceholder/jsonplaceholder.service';
+import { Post } from 'src/app/services/jsontest/jsontest.type';
 
 @Component({
 	selector: 'app-show-posts',
@@ -11,14 +11,14 @@ import { Post } from 'src/app/services/jsontest.type';
 export class ShowPostsComponent implements OnInit {
 	public posts: Post[];
 
-	constructor(private _jsontest: JsontestpostsService) {}
+	constructor(private _jsonplaceholder: JsonplaceholderService) {}
 
 	public ngOnInit() {
 		this.getPosts();
 	}
 
 	public getPosts() {
-		this._jsontest.getPosts().subscribe((data) => {
+		this._jsonplaceholder.getPosts().subscribe((data) => {
 			this.posts = data;
 		});
 	}

@@ -1,7 +1,7 @@
 import { delay } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 
-import { JsontestService } from '../../services/jsontest-ip/jsontest.service';
+import { JsontestService } from '../../services/jsontest/jsontest.service';
 
 @Component({
 	selector: 'app-show-ip',
@@ -16,26 +16,16 @@ export class ShowIpComponent implements OnInit {
 
 	public ngOnInit() {
 		this.getIp();
-		// this.alertIp();
 	}
 
 	public getIp() {
-		return new Promise((resolve) => {
-			this.loader = true;
-			this._jsontest
-				.getIp()
-				.pipe(delay(500))
-				.subscribe((data) => {
-					this.loader = false;
-					this.ip = data.ip;
-					resolve(data.ip);
-				});
-		});
+		this.loader = true;
+		this._jsontest
+			.getIp()
+			.pipe(delay(500))
+			.subscribe((data) => {
+				this.loader = false;
+				this.ip = data.ip;
+			});
 	}
-
-	// public alertIp() {
-	// 	return this._jsontest.alertIp().subscribe((data) => {
-	// 		alert(data);
-	// 	});
-	// }
 }

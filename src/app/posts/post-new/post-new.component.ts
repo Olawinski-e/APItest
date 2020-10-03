@@ -2,20 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { delay } from 'rxjs/operators';
 
-import { JsontestpostsService } from 'src/app/services/jsontest-post/jsontestposts.service';
+import { JsonplaceholderService } from 'src/app/services/jsonplaceholder/jsonplaceholder.service';
+
 @Component({
-	selector: 'app-new-post',
-	templateUrl: './new-post.component.html',
-	styleUrls: ['./new-post.component.scss'],
+	selector: 'app-post-new',
+	templateUrl: './post-new.component.html',
+	styleUrls: ['./post-new.component.scss'],
 })
-export class NewPostComponent implements OnInit {
+export class PostNewComponent implements OnInit {
 	public loader = false;
 
 	public postCreateForm: FormGroup;
 	public submitted: boolean;
 	public id: number;
 
-	constructor(private _jsontest: JsontestpostsService) {}
+	constructor(private _jsonplaceholder: JsonplaceholderService) {}
 
 	ngOnInit(): void {
 		this.postCreateForm = new FormGroup({
@@ -44,7 +45,7 @@ export class NewPostComponent implements OnInit {
 			return;
 		}
 
-		this._jsontest
+		this._jsonplaceholder
 			.postPost({
 				title: this.postCreateForm.value.title,
 				body: this.postCreateForm.value.body,

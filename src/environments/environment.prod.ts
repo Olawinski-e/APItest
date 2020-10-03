@@ -3,8 +3,15 @@ export const ENVIRONMENT = {
 
 	services: {
 		jsontest: {
-			apiUrls: {
+			apiUrl: {
 				ip: 'http://ip.jsontest.com',
+				datetime: 'http://date.jsontest.com/',
+				headers: 'http://headers.jsontest.com/',
+			},
+		},
+		jsonplaceholder: {
+			apiUrl: {
+				post: 'https://jsonplaceholder.typicode.com/posts',
 			},
 		},
 	},

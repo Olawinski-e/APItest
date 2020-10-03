@@ -9,6 +9,11 @@ const routes: Routes = [
 		component: HomeComponent,
 	},
 	{
+		path: '',
+		redirectTo: 'HomeComponent',
+		pathMatch: 'full',
+	},
+	{
 		path: 'tools',
 		loadChildren: () =>
 			import('./tools/tools.module').then((m) => m.ToolsModule),
@@ -22,11 +27,6 @@ const routes: Routes = [
 		path: 'notes',
 		loadChildren: () =>
 			import('./notes/notes.module').then((m) => m.NotesModule),
-	},
-	{
-		path: '',
-		redirectTo: 'HomeComponent',
-		pathMatch: 'full',
 	},
 ];
 

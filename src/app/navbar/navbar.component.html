@@ -16,6 +16,13 @@
 		<button mat-menu-item routerLink="/tools/show-datetime">
 			Date & heure
 		</button>
+		<button
+			mat-menu-item
+			routerLink="/tools/secured"
+			(click)="securedPage()"
+		>
+			Private
+		</button>
 	</mat-menu>
 
 	<mat-menu #notes>

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ShowPostsComponent } from './show-posts/show-posts.component';
-import { NewPostComponent } from './new-post/new-post.component';
+import { PostNewComponent } from './post-new/post-new.component';
 
 import { ShowPostsRoutingModule } from './posts-routing.module';
 
@@ -17,7 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-	declarations: [ShowPostsComponent, NewPostComponent],
+	declarations: [ShowPostsComponent, PostNewComponent],
 	imports: [
 		CommonModule,
 		ShowPostsRoutingModule,

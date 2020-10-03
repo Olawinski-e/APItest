@@ -6,17 +6,17 @@ export const ENVIRONMENT = {
 	production: false,
 
 	services: {
-		jsontestip: {
-			apiUrl: 'http://ip.jsontest.com',
+		jsontest: {
+			apiUrl: {
+				ip: 'http://ip.jsontest.com',
+				datetime: 'http://date.jsontest.com/',
+				headers: 'http://headers.jsontest.com/',
+			},
 		},
-		jsontestheaders: {
-			apiUrl: 'http://headers.jsontest.com/',
-		},
-		jsontestdatetime: {
-			apiUrl: 'http://date.jsontest.com',
-		},
-		jsontestposts: {
-			apiUrl: 'https://jsonplaceholder.typicode.com/posts',
+		jsonplaceholder: {
+			apiUrl: {
+				post: 'https://jsonplaceholder.typicode.com/posts',
+			},
 		},
 	},
 };

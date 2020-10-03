@@ -1,52 +1,43 @@
-import { delay } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import * as moment from 'moment-timezone';
+import { JsontestService } from 'src/app/services/jsontest/jsontest.service';
 
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
+
+import * as moment from 'moment-timezone';
 @Component({
 	selector: 'app-show-datetime',
 	templateUrl: './show-datetime.component.html',
 	styleUrls: ['./show-datetime.component.scss'],
 })
 export class ShowDatetimeComponent implements OnInit {
-	public loader = false;
-	public france: string;
-	public korea: string;
+	public milliseconds: number = 0;
+	public seoul: string;
 
-	constructor() {}
+	constructor(private _jsontest: JsontestService) {}
 
 	public ngOnInit() {
+		this.getDatetime();
 		setInterval(() => {
-			const dateI = new Date();
-			this.updateFDate(dateI);
-			this.updateKDate(dateI);
+			this.getDatetimeSeoul();
 		}, 1000);
 	}
 
-	// FRANCE ===============================================================
+	// GET DATETIME FROM API ========================================================
 
-	public fDate: string;
-
-	private updateFDate(date: Date) {
-		this.france = moment()
-			.locale('fr')
-			.tz('Europe/Paris')
-			.format('[et nous sommes le] D MMMM YYYY');
-		this.fDate = date.toLocaleTimeString('fr-FR', {
-			timeZone: 'Europe/Paris',
-			hour12: false,
+	public getDatetime() {
+		this._jsontest.getDatetime().subscribe((data) => {
+			this.milliseconds = data.milliseconds_since_epoch;
 		});
 	}
 
-	// KOREA ===============================================================
+	// GET SYDNEY MOMENT TZ =========================================================
 
-	public kDate: string;
-
-	private updateKDate(date: Date) {
-		this.korea = moment()
-			.tz('Asia/Seoul')
-			.format('[and today is] MMMM Do YYYY');
-		this.kDate = date.toLocaleTimeString('en-US', {
-			timeZone: 'Asia/Seoul',
-		});
+	private getDatetimeSeoul() {
+		this.seoul = moment
+			.tz(this.milliseconds, 'Asia/Seoul')
+			.locale('fr')
+			.format('[Il est] HH[h]mm [et nous sommes le] D MMMM YYYY');
 	}
 }
